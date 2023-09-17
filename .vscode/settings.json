@@ -1,0 +1,12 @@
+{
+  "editor.fontFamily": "'Fira Code','Roboto','Droid Sans Mono', 'monospace', monospace",
+  "editor.formatOnSave": true,
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "cSpell.words": ["longtext", "mediumtext", "tinyint"],
+  "editor.fontSize": 16,
+  "js/ts.implicitProjectConfig.checkJs": false,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "eslint.useESLintClass": true
+}
