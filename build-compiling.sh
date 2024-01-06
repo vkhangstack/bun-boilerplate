@@ -1,0 +1,1 @@
+bun build ./src/index.ts --outfile ./build/app --compile

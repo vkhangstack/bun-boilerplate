@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
-import {configure, getLogger}  from 'log4js';
-// import moment from 'moment';
+import { configure, getLogger } from 'log4js';
 
 const path = process.env.NODE_ENV === 'production' ? process.env.LOGS_PATH : 'logs/';
 const numBackups = process.env.NODE_ENV === 'production' ? process.env.LOGS_NUMBER : 30;
@@ -25,7 +24,7 @@ configure({
 const logger = getLogger('application');
 
 const getTime = () => {
-  return dayjs().format('dd-MM-yy HH:mm:ss')
+  return dayjs().format('DD-MM-YYYY HH:mm:ss')
 }
 
 export class LoggerService {
@@ -43,7 +42,7 @@ export class LoggerService {
    * Write a 'info' level log.
    */
   public info(message: string) {
-    logger.info(`${message}`);
+    // logger.info(`${message}`);
     const log = `[${getTime()}] [INFO] ${message} `;
     // eslint-disable-next-line no-console
     console.log('\u001B[32m', log);
@@ -58,7 +57,7 @@ export class LoggerService {
       context = JSON.stringify(context);
     }
 
-    logger.log(`${message} ${context}`);
+    // logger.log(`${message} ${context}`);
     const log = `[${getTime()}] [LOG] [${context}] ${message} `;
     // eslint-disable-next-line no-console
     console.log('\u001B[37m', log);
@@ -74,7 +73,7 @@ export class LoggerService {
     }
 
     const log = `[${getTime()}] [ERROR] ${message} ${context}`;
-    logger.error(`${message} ${context}`);
+    // logger.error(`${message} ${context}`);
     // eslint-disable-next-line no-console
     console.log('\u001B[31m', log);
     // eslint-disable-next-line no-console
@@ -91,7 +90,7 @@ export class LoggerService {
     }
 
     const log = `[${getTime()}] [WARN] ${message} ${context}`;
-    logger.warn(`${message} ${context}`);
+    // logger.warn(`${message} ${context}`);
     // eslint-disable-next-line no-console
     console.log('\u001B[33m', log);
   }
@@ -106,7 +105,7 @@ export class LoggerService {
     }
 
     const log = `[${getTime()}] [DEBUG] ${message} ${context}`;
-    logger.debug(`${message} ${context}`);
+    // logger.debug(`${message} ${context}`);
     // eslint-disable-next-line no-console
     console.log('\u001B[36m', log);
   }

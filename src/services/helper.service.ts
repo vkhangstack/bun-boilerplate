@@ -23,15 +23,15 @@ export class HelperService {
     );
   }
 
-  // public removeObjectEmpty(obj: object): object {
-  //   for (const key of Object.keys(obj)) {
-  //     if (this.isEmpty(obj[key])) {
-  //       delete obj[key];
-  //     }
-  //   }
+  public removeObjectEmpty(obj: any): object {
+    for (const key of Object.keys(obj)) {
+      if (this.isEmpty(obj[key])) {
+        delete obj[key];
+      }
+    }
 
-  //   return obj;
-  // }
+    return obj;
+  }
 
   public getRandomNumber() {
     const buffer = crypto.randomBytes(4);
